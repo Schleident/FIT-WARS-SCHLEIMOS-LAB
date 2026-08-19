@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>FIT WARS | Client Dashboard</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+
+    <nav class="navbar">
+
+
+        <a href="index.html" class="logo">
+            <span>FIT WARS</span>
+            <small>@ SCHLEIMO'S LAB</small>
+        </a>
+
+
+        <div class="nav-buttons">
+
+
+            <a href="index.html" class="login-btn">
+                Back To Site
+            </a>
+
+
+            <a href="index.html#contact" class="primary-btn">
+                Contact Coach
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+
+</header>
+
+
+
+
+<main class="dashboard">
+
+
+    <!-- DASHBOARD HEADER -->
+
+
+    <section class="dashboard-hero">
+
+
+        <div>
+            <p class="section-tag">CLIENT PORTAL</p>
+
+
+            <h1>
+    WELCOME BACK,<br>
+    <span id="dashboardName">ATHLETE.</span>
+</h1>
+
+
+            <p>
+                Your training. Your progress. Your next level.
+            </p>
+        </div>
+
+
+        <div class="dashboard-status">
+            <span class="status-dot"></span>
+            ACTIVE CLIENT
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- STATS -->
+
+
+    <section class="dashboard-section">
+
+
+        <div class="dashboard-heading">
+            <p class="section-tag">YOUR PROGRESS</p>
+            <h2>PERFORMANCE STATS</h2>
+        </div>
+
+
+        <div class="stats-grid">
+
+
+            <div class="dashboard-card stat-card">
+                <span>01</span>
+                <h3>WORKOUTS</h3>
+                <strong id="workoutCount">0</strong>
+                <p>Completed this month</p>
+            </div>
+
+
+            <div class="dashboard-card stat-card">
+                <span>02</span>
+                <h3>STREAK</h3>
+                <strong id="streakCount">12</strong>
+                <p>Days consistent</p>
+            </div>
+
+
+            <div class="dashboard-card stat-card">
+                <span>03</span>
+                <h3>PROGRESS</h3>
+                <strong id="progressPercent">0%</strong>
+                <p>Current program</p>
+            </div>
+
+
+            <div class="dashboard-card stat-card">
+                <span>04</span>
+                <h3>LEVEL</h3>
+                <strong>04</strong>
+                <p>Lab athlete level</p>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- DASHBOARD OPTIONS -->
+
+
+    <section class="dashboard-section">
+
+
+        <div class="dashboard-heading">
+            <p class="section-tag">ATHLETE CENTER</p>
+            <h2>YOUR LAB</h2>
+        </div>
+
+
+        <div class="dashboard-grid">
+
+
+            <a href="workouts.html" class="dashboard-card dashboard-option">
+
+
+                <div class="dashboard-icon">🏋🏾</div>
+
+
+                <h3>MY WORKOUTS</h3>
+
+
+                <p>
+                    View your current training plan and workouts.
+                </p>
+
+
+                <span>VIEW WORKOUTS →</span>
+
+
+            </a>
+
+
+
+
+            <a href="progress.html" class="dashboard-card dashboard-option">
+
+
+                <div class="dashboard-icon">📈</div>
+
+
+                <h3>MY PROGRESS</h3>
+
+
+                <p>
+                    Track your strength, performance, and progress.
+                </p>
+
+
+                <span>VIEW PROGRESS →</span>
+
+
+            </a>
+
+
+
+
+            <a href="schedule.html" class="dashboard-card dashboard-option">
+
+
+                <div class="dashboard-icon">📅</div>
+
+
+                <h3>TRAINING SCHEDULE</h3>
+
+
+                <p>
+                    See your upcoming training sessions.
+                </p>
+
+
+                <span>VIEW SCHEDULE →</span>
+
+
+            </a>
+
+
+
+
+            <a href="coaching-request.html" class="dashboard-card dashboard-option">
+
+
+                <div class="dashboard-icon">📝</div>
+
+
+                <h3>REQUEST COACHING</h3>
+
+
+                <p>
+                    Request changes, help, or personalized guidance.
+                </p>
+
+
+                <span>MAKE REQUEST →</span>
+
+
+            </a>
+
+
+
+
+            <a href="messages.html" class="dashboard-card dashboard-option">
+
+
+                <div class="dashboard-icon">💬</div>
+
+
+                <h3>MESSAGES</h3>
+
+
+                <p>
+                    Communicate directly with your coach.
+                </p>
+
+
+                <span>OPEN MESSAGES →</span>
+
+
+            </a>
+
+
+
+
+            <a href="profile.html" class="dashboard-card dashboard-option">
+
+
+                <div class="dashboard-icon">👤</div>
+
+
+                <h3>MY PROFILE</h3>
+
+
+                <p>
+                    Manage your athlete profile and information.
+                </p>
+
+
+                <span>VIEW PROFILE →</span>
+
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- CURRENT PROGRAM -->
+
+
+    <section class="dashboard-section">
+
+
+        <div class="current-program">
+
+
+            <div>
+
+
+                <p class="section-tag">CURRENT PROGRAM</p>
+
+
+                <h2>THE FOUNDATION</h2>
+
+
+                <p>
+                    Strength, conditioning, movement quality,
+                    and consistency. Keep building your foundation.
+                </p>
+
+
+            </div>
+
+
+            <div class="program-progress">
+
+
+                <div class="progress-top">
+                     <span>PROGRAM PROGRESS</span>
+                     <strong id="programPercent">0%</strong>
+                </div>
+
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="programProgress"></div>
+                </div>
+
+
+                <p id="programWeek">Week 0 of 3</p>
+<div id="scheduleSummary" style="margin-top:20px; color:#888;">
+    Loading schedule...
+</div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- COACH MESSAGE -->
+
+
+    <section class="dashboard-section">
+
+
+        <div class="coach-message">
+
+
+            <p class="section-tag">COACH'S NOTE</p>
+
+
+            <h2>KEEP SHOWING UP.</h2>
+
+
+            <p>
+                Progress isn't built in one perfect workout.
+                It's built through consistency. Keep putting
+                in the work and trust the process.
+            </p>
+
+
+            <strong>
+                — SCHLEIMO'S LAB
+            </strong>
+
+
+        </div>
+
+
+    </section>
+
+<section class="dashboard-section">
+
+    <div class="dashboard-heading">
+        <p class="section-tag">COACHING</p>
+        <h2>LATEST REQUEST</h2>
+    </div>
+
+    <div class="dashboard-card" id="latestRequest"
+    style="padding:30px;">
+    <p style="color:#888;">
+        No message sent yet.
+    </p>
+</div>
+
+</section>
+
+
+    <!-- LOGOUT -->
+
+
+    <section class="dashboard-logout">
+
+
+        <a href="index.html">
+            LOG OUT
+        </a>
+
+
+    </section>
+
+
+</main>
+
+
+
+
+<footer class="site-footer">
+
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+
+            <h2>FIT WARS</h2>
+
+
+            <p>SCHLEIMO'S LAB 🧪</p>
+
+
+            <span>
+                TRAIN DIFFERENT. MOVE DIFFERENT.
+            </span>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <h3>EXPLORE</h3>
+
+
+            <a href="index.html">Home</a>
+            <a href="index.html#goals">Train</a>
+            <a href="index.html#programs">Programs</a>
+            <a href="index.html#community">Community</a>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <h3>ACCOUNT</h3>
+
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html#contact">Contact Coach</a>
+            <a href="index.html">Log Out</a>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+
+        <p>
+            © 2026 FIT WARS @ SCHLEIMO'S LAB. All Rights Reserved.
+        </p>
+
+
+</div>
+
+
+</footer>
+
+<script>
+    const requestType = localStorage.getItem("fitWarsRequestType");
+    const priority = localStorage.getItem("fitWarsPriority");
+    const requestMessage = localStorage.getItem("fitWarsRequestMessage");
+
+    const savedMessage = localStorage.getItem("fitWarsMessage");
+
+    let latestRequestHTML = "";
+
+    if (requestType && requestMessage) {
+        latestRequestHTML += `
+            <p style="color:#008cff; font-size:12px; font-weight:bold; letter-spacing:1px;">
+                LATEST COACHING REQUEST
+            </p>
+
+            <h3 style="margin:12px 0;">
+                ${requestType.toUpperCase()} — PRIORITY: ${priority.toUpperCase()}
+            </h3>
+
+            <p style="color:#999; line-height:1.7;">
+                ${requestMessage}
+            </p>
+
+            <p style="color:#666; font-size:11px; margin-top:15px;">
+                REQUEST SAVED
+            </p>
+        `;
+    }
+
+    if (savedMessage) {
+        latestRequestHTML += `
+            <div style="margin-top:25px; padding-top:25px; border-top:1px solid #222;">
+
+                <p style="color:#008cff; font-size:12px; font-weight:bold; letter-spacing:1px;">
+                    LATEST MESSAGE
+                </p>
+
+                <p style="color:#999; line-height:1.7; margin-top:12px;">
+                    ${savedMessage}
+                </p>
+
+                <p style="color:#666; font-size:11px; margin-top:15px;">
+                    MESSAGE SAVED
+                </p>
+
+            </div>
+        `;
+    }
+
+    if (latestRequestHTML) {
+        document.getElementById("latestRequest").innerHTML = latestRequestHTML;
+    }
+</script>
+<script>
+    let completed = 0;
+
+    for (let i = 0; i < 3; i++) {
+        if (localStorage.getItem("fitWarsWorkout" + i) === "completed") {
+            completed++;
+        }
+    }
+
+    // Update workout count
+    document.getElementById("workoutCount").textContent = completed;
+
+    // Calculate progress
+    const progress = Math.round((completed / 3) * 100);
+
+    // Update top progress percentage
+    document.getElementById("progressPercent").textContent = progress + "%";
+
+    // Update large progress percentage
+    document.getElementById("programPercent").textContent = progress + "%";
+
+    // Update blue progress bar
+    document.getElementById("programProgress").style.width = progress + "%";
+
+    // Update week
+    document.getElementById("programWeek").textContent =
+        "Week " + completed + " of 3";
+</script>
+<script>
+    const scheduleDays = [
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY",
+        "SATURDAY"
+    ];
+
+    let completedDays = 0;
+    let scheduleHTML = "";
+
+    scheduleDays.forEach(function(day, index) {
+
+        if (localStorage.getItem("fitWarsSchedule" + index) === "completed") {
+
+            completedDays++;
+
+            scheduleHTML += `
+                <span style="color:#1e90ff; margin-right:15px;">
+                    ✓ ${day}
+                </span>
+            `;
+
+        } else {
+
+            scheduleHTML += `
+                <span style="color:#555; margin-right:15px;">
+                    — ${day}
+                </span>
+            `;
+
+        }
+
+    });
+
+    document.getElementById("scheduleSummary").innerHTML =
+        "<strong style='color:white;'>WEEKLY SCHEDULE:</strong><br><br>" +
+        scheduleHTML;
+</script>
+<script>
+    const savedName = localStorage.getItem("fitWarsName");
+
+    if (savedName) {
+        document.getElementById("dashboardName").textContent =
+            savedName.toUpperCase() + ".";
+    }
+</script>
+</body>
+</html>
+
