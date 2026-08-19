@@ -1,1 +1,663 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIT WARS | Coaching</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0b0b0b;
+            border-bottom: 1px solid #1e90ff;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: #1e90ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo small {
+            display: block;
+            color: #777;
+            font-size: 9px;
+            letter-spacing: 2px;
+            margin-top: 3px;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 10px 16px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .section-tag {
+            color: #1e90ff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #1e90ff;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .plan-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 30px;
+            position: relative;
+        }
+
+        .plan-card.featured {
+            border-color: #1e90ff;
+            transform: translateY(-8px);
+        }
+
+        .featured-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #1e90ff;
+            color: black;
+            text-align: center;
+            padding: 7px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .featured .plan-number {
+            margin-top: 25px;
+        }
+
+        .plan-number {
+            color: #1e90ff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .plan-card h2 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .plan-description {
+            color: #888;
+            line-height: 1.6;
+            min-height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            margin-bottom: 25px;
+        }
+
+        .price strong {
+    display: inline-block;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+        .price span {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .features {
+            list-style: none;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        .features li {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 12px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #1e90ff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .coaching-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            background: #1e90ff;
+            color: black;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .coaching-btn:hover {
+            background: white;
+        }
+
+        .secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid #1e90ff;
+        }
+
+        .secondary:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        .how-section {
+            margin-top: 75px;
+            border-top: 1px solid #222;
+            padding-top: 55px;
+        }
+
+        .how-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .how-heading h2 {
+            font-size: 34px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            background: #0b0b0b;
+            border: 1px solid #222;
+            padding: 25px;
+        }
+
+        .step span {
+            color: #1e90ff;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin: 15px 0 10px;
+        }
+
+        .step p {
+            color: #777;
+            line-height: 1.6;
+            font-size: 13px;
+        }
+
+        .bottom-cta {
+            margin-top: 70px;
+            background: #111;
+            border: 1px solid #222;
+            border-left: 3px solid #1e90ff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .bottom-cta h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .bottom-cta p {
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        .free-btn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 13px 22px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .free-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        @media (max-width: 850px) {
+
+            .plans {
+                grid-template-columns: 1fr;
+            }
+
+            .plan-card.featured {
+                transform: none;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            main {
+                padding: 40px 15px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .plan-card {
+                padding: 25px 20px;
+            }
+
+            .bottom-cta {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo">
+                FIT WARS
+                <small>@ SCHLEIMO'S LAB 🧪</small>
+            </div>
+
+            <a href="../index.html" class="back-btn">
+                ← BACK TO SITE
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <p class="section-tag">
+                SCHLEIMO'S LAB COACHING
+            </p>
+
+            <h1>
+                DON'T JUST<br>
+                <span>TRAIN.</span> EVOLVE.
+            </h1>
+
+            <p>
+                Choose the level of support that matches your goals.
+                Whether you need a structured program or direct coaching,
+                we're going to build something that gets you moving.
+            </p>
+
+        </section>
+
+
+        <section class="plans">
+
+
+            <article class="plan-card">
+
+                <p class="plan-number">
+                    01 — PROGRAM
+                </p>
+
+                <h2>
+                    PROGRAM ONLY
+                </h2>
+
+                <p class="plan-description">
+                    A structured training program for athletes who
+                    are ready to put in the work on their own.
+                </p>
+
+                <div class="price">
+    <strong class="plan-price">$25</strong>
+    <span>/ program</span>
+</div>
+
+                <ul class="features">
+
+                    <li>Structured workouts</li>
+                    <li>Training plan</li>
+                    <li>Progress tracking</li>
+                    <li>Client dashboard</li>
+
+                </ul>
+
+                <a
+                    href="checkout.html"
+                    class="coaching-btn secondary"
+                    onclick="selectPlan('PROGRAM ONLY', 25)"
+                >
+                    CHOOSE PLAN →
+                </a>
+
+            </article>
+
+
+            <article class="plan-card featured">
+
+                <div class="featured-label">
+                    MOST POPULAR
+                </div>
+
+                <p class="plan-number">
+                    02 — COACHING
+                </p>
+
+                <h2>
+                    COACHING
+                </h2>
+
+                <p class="plan-description">
+                    Personalized guidance, training adjustments,
+                    progress support, and coach communication.
+                </p>
+
+                <div class="price">
+    <strong class="plan-price">$50</strong>
+    <span>/ month</span>
+</div>
+
+                <ul class="features">
+
+                    <li>Personalized training</li>
+                    <li>Workout adjustments</li>
+                    <li>Progress guidance</li>
+                    <li>Coach communication</li>
+                    <li>Client dashboard</li>
+
+                </ul>
+
+                <a
+                    href="checkout.html"
+                    class="coaching-btn"
+                    onclick="selectPlan('COACHING', 50)"
+                >
+                    CHOOSE COACHING →
+                </a>
+
+            </article>
+
+
+            <article class="plan-card">
+
+                <p class="plan-number">
+                    03 — PRIVATE
+                </p>
+
+                <h2>
+                    1-ON-1
+                </h2>
+
+                <p class="plan-description">
+                    The highest level of personalization with direct
+                    coaching and a program built around you.
+                </p>
+
+                <div class="price">
+    <strong class="plan-price">$100</strong>
+    <span>/ month</span>
+</div>
+
+                <ul class="features">
+
+                    <li>Custom training program</li>
+                    <li>Direct 1-on-1 coaching</li>
+                    <li>Detailed progress tracking</li>
+                    <li>Personalized adjustments</li>
+                    <li>Client dashboard</li>
+
+                </ul>
+
+                <a
+                    href="checkout.html"
+                    class="coaching-btn secondary"
+                    onclick="selectPlan('1-ON-1', 100)"
+                >
+                    CHOOSE 1-ON-1 →
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+        <section class="how-section">
+
+            <div class="how-heading">
+
+                <p class="section-tag">
+                    HOW IT WORKS
+                </p>
+
+                <h2>
+                    FROM DAY ONE TO<br>
+                    YOUR NEXT LEVEL.
+                </h2>
+
+            </div>
+
+
+            <div class="steps">
+
+
+                <div class="step">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        CHOOSE YOUR PATH
+                    </h3>
+
+                    <p>
+                        Pick the program or coaching level that
+                        fits your goals and the amount of support
+                        you need.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        GET YOUR PLAN
+                    </h3>
+
+                    <p>
+                        Complete your information and receive
+                        access to the training system built for
+                        your selected path.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        DO THE WORK
+                    </h3>
+
+                    <p>
+                        Train, track your progress, communicate
+                        with your coach, and keep pushing forward.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <section class="bottom-cta">
+
+            <p class="section-tag">
+                NOT SURE WHAT YOU NEED?
+            </p>
+
+            <h2>
+                LET'S FIGURE IT OUT.
+            </h2>
+
+            <p>
+                Tell me about your goals and I'll help you find
+                the right training path.
+            </p>
+
+            <a
+                href="../index.html#contact"
+                class="free-btn"
+            >
+                CONTACT COACH →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+        function selectPlan(plan, price) {
+
+            localStorage.setItem(
+                "fitWarsSelectedPlan",
+                plan
+            );
+
+            localStorage.setItem(
+                "fitWarsSelectedPrice",
+                price
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
 
