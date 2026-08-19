@@ -621,6 +621,25 @@
             savedName.toUpperCase() + ".";
     }
 </script>
+    <script>
+    const membershipPlan = localStorage.getItem("fitWarsPlan");
+
+    const planNames = {
+        "PROGRAM ONLY": "PROGRAM ONLY — $25",
+        "COACHING": "COACHING — $50/MONTH",
+        "1-ON-1": "1-ON-1 — $100/MONTH"
+    };
+
+    const membershipElement = document.getElementById("membershipPlan");
+
+    if (membershipPlan && planNames[membershipPlan]) {
+        membershipElement.textContent =
+            "MEMBERSHIP: " + planNames[membershipPlan];
+    } else {
+        membershipElement.textContent =
+            "MEMBERSHIP: NOT SELECTED";
+    }
+</script>
 </body>
 </html>
 
