@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIT WARS | Programs</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0b0b0b;
+            border-bottom: 1px solid #1e90ff;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: #1e90ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .back-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-tag {
+            color: #1e90ff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .page-heading h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .page-heading p {
+            max-width: 650px;
+            margin: auto;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            min-height: 430px;
+        }
+
+        .program-card.featured {
+            border: 1px solid #1e90ff;
+            transform: translateY(-8px);
+        }
+
+        .program-number {
+            color: #1e90ff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .program-card h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .program-card .description {
+            color: #888;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .program-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .program-card li {
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .program-card li::before {
+            content: "✓";
+            color: #1e90ff;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .program-price {
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+
+        .program-price span {
+            color: #777;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .program-price strong {
+            font-size: 30px;
+        }
+
+        .program-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #1e90ff;
+            color: black;
+            text-decoration: none;
+            padding: 14px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .program-btn:hover {
+            background: white;
+        }
+
+        .program-btn.secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid #333;
+        }
+
+        .program-btn.secondary:hover {
+            background: #1e90ff;
+            color: black;
+            border-color: #1e90ff;
+        }
+
+        .coaching-section {
+            margin-top: 70px;
+            background: #0d0d0d;
+            border-left: 3px solid #1e90ff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .coaching-section h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .coaching-section p {
+            color: #888;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        .coaching-btn {
+            display: inline-block;
+            background: #1e90ff;
+            color: black;
+            text-decoration: none;
+            padding: 14px 25px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .coaching-btn:hover {
+            background: white;
+        }
+
+        @media (max-width: 850px) {
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-card.featured {
+                transform: none;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            main {
+                padding: 40px 15px;
+            }
+
+            .page-heading h1 {
+                font-size: 36px;
+            }
+
+            .program-card {
+                padding: 25px;
+            }
+
+            .coaching-section {
+                padding: 30px 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo">
+                FIT WARS 🧪
+            </div>
+
+            <a href="../index.html" class="back-btn">
+                ← Back to Main Site
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-heading">
+
+            <p class="section-tag">
+                SCHLEIMO'S LAB
+            </p>
+
+            <h1>
+                CHOOSE YOUR PROGRAM
+            </h1>
+
+            <p>
+                Structured training built around your goals,
+                your performance, and your progression.
+                Pick your path and let's get to work.
+            </p>
+
+        </section>
+
+
+        <section class="program-grid">
+
+
+            <!-- PROGRAM 01 -->
+
+            <div class="program-card featured">
+
+                <p class="program-number">
+                    PROGRAM 01
+                </p>
+
+                <h2>
+                    THE FOUNDATION
+                </h2>
+
+                <p class="description">
+                    Build strength, improve movement quality,
+                    develop conditioning, and create the
+                    consistency needed for long-term progress.
+                </p>
+
+                <ul>
+                    <li>3 workouts per week</li>
+                    <li>Strength & conditioning</li>
+                    <li>Progress tracking</li>
+                    <li>Workout guidance</li>
+                </ul>
+
+                <div class="program-price">
+
+                    <span>
+                        STARTING AT
+                    </span>
+
+                    <strong>
+                        $25
+                    </strong>
+
+                </div>
+
+                <a href="coaching.html" class="program-btn">
+                    GET STARTED →
+                </a>
+
+            </div>
+
+
+            <!-- PROGRAM 02 -->
+
+            <div class="program-card">
+
+                <p class="program-number">
+                    PROGRAM 02
+                </p>
+
+                <h2>
+                    ATHLETE MODE
+                </h2>
+
+                <p class="description">
+                    Train like an athlete with speed, power,
+                    agility, conditioning, and performance-focused
+                    workouts.
+                </p>
+
+                <ul>
+                    <li>Performance training</li>
+                    <li>Speed & agility</li>
+                    <li>Conditioning</li>
+                    <li>Athletic development</li>
+                </ul>
+
+                <div class="program-price">
+
+                    <span>
+                        STARTING AT
+                    </span>
+
+                    <strong>
+                        $35
+                    </strong>
+
+                </div>
+
+                <a href="coaching.html" class="program-btn secondary">
+                    EXPLORE PROGRAM →
+                </a>
+
+            </div>
+
+
+            <!-- PROGRAM 03 -->
+
+            <div class="program-card">
+
+                <p class="program-number">
+                    PROGRAM 03
+                </p>
+
+                <h2>
+                    BODYWEIGHT LAB
+                </h2>
+
+                <p class="description">
+                    Master your body through calisthenics,
+                    body control, mobility, strength, and
+                    advanced movement.
+                </p>
+
+                <ul>
+                    <li>Bodyweight training</li>
+                    <li>Mobility work</li>
+                    <li>Skill progression</li>
+                    <li>Movement development</li>
+                </ul>
+
+                <div class="program-price">
+
+                    <span>
+                        STARTING AT
+                    </span>
+
+                    <strong>
+                        $30
+                    </strong>
+
+                </div>
+
+                <a href="coaching.html" class="program-btn secondary">
+                    EXPLORE PROGRAM →
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <section class="coaching-section">
+
+            <p class="section-tag">
+                NEED SOMETHING CUSTOM?
+            </p>
+
+            <h2>
+                GET COACHED
+            </h2>
+
+            <p>
+                Not sure which program is right for you?
+                Work directly with Schleimo's Lab to build
+                a training approach around your goals.
+            </p>
+
+            <a href="coaching.html" class="coaching-btn">
+                START COACHING →
+            </a>
+
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIT WARS | My Progress</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0b0b0b;
+            border-bottom: 1px solid #1e90ff;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: #1e90ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .back-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #888;
+            margin-bottom: 35px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+
+        .stat-card {
+            background: #111;
+            border: 1px solid #222;
+            padding: 25px;
+        }
+
+        .stat-card span {
+            color: #1e90ff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .stat-card h2 {
+            margin: 15px 0 8px;
+            font-size: 34px;
+        }
+
+        .stat-card p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .progress-section {
+            background: #111;
+            border: 1px solid #222;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .progress-section h2 {
+            margin-bottom: 25px;
+        }
+
+        .progress-item {
+            margin-bottom: 25px;
+        }
+
+        .progress-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .progress-label span:last-child {
+            color: #1e90ff;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #222;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #1e90ff;
+        }
+
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .strength-card {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            padding: 22px;
+        }
+
+        .strength-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .strength-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .goal-box {
+            margin-top: 25px;
+            border-left: 3px solid #1e90ff;
+            background: #0d0d0d;
+            padding: 25px;
+        }
+
+        .goal-box h3 {
+            margin-bottom: 8px;
+        }
+
+        .goal-box p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 800px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .strength-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .page-title {
+                font-size: 30px;
+            }
+
+            main {
+                padding: 30px 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-section {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+
+            <div class="logo">
+                FIT WARS 🧪
+            </div>
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <h1 class="page-title">My Progress</h1>
+
+        <p class="intro">
+            Track your performance, consistency, and progress inside the Lab.
+        </p>
+
+
+        <!-- PROGRESS STATS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <span>WORKOUTS</span>
+                <h2 id="progressWorkouts">0</h2>
+                <p>Completed this month</p>
+            </div>
+
+            <div class="stat-card">
+                <span>STREAK</span>
+                <h2>12</h2>
+                <p>Days consistent</p>
+            </div>
+
+            <div class="stat-card">
+                <span>PROGRAM</span>
+                <h2 id="progressProgram">0%</h2>
+<p>Program completed</p>
+                
+            </div>
+
+            <div class="stat-card">
+                <span>LEVEL</span>
+                <h2>04</h2>
+                <p>Current Lab level</p>
+            </div>
+
+        </section>
+
+
+        <!-- PROGRAM PROGRESS -->
+
+        <section class="progress-section">
+
+            <h2>Program Progress</h2>
+
+            <div class="progress-item">
+
+                <div class="progress-label">
+                    <span>Strength</span>
+                    <span id="strengthPercent">0%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="strengthBar" style="width: 0%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="progress-item">
+
+                <div class="progress-label">
+    <span>Conditioning</span>
+    <span id="conditioningPercent">0%</span>
+</div>
+
+<div class="progress-bar">
+    <div class="progress-fill" id="conditioningBar" style="width: 0%;"></div>
+</div>
+
+            </div>
+
+
+            <div class="progress-item">
+
+                <div class="progress-label">
+    <span>Consistency</span>
+    <span id="consistencyPercent">0%</span>
+</div>
+
+<div class="progress-bar">
+    <div class="progress-fill" id="consistencyBar" style="width: 0%;"></div>
+</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STRENGTH -->
+
+        <section class="progress-section">
+
+            <h2>Strength Progress</h2>
+
+            <div class="strength-grid">
+
+                <div class="strength-card">
+                    <h3>Push-Ups</h3>
+                    <p>Previous: 25 reps</p>
+                    <p>Current: <strong>40 reps</strong></p>
+                </div>
+
+                <div class="strength-card">
+                    <h3>Pull-Ups</h3>
+                    <p>Previous: 6 reps</p>
+                    <p>Current: <strong>12 reps</strong></p>
+                </div>
+
+                <div class="strength-card">
+                    <h3>Squats</h3>
+                    <p>Previous: 40 reps</p>
+                    <p>Current: <strong>60 reps</strong></p>
+                </div>
+
+            </div>
+
+
+            <div class="goal-box">
+
+                <h3>🎯 Current Goal</h3>
+
+                <p>
+                    Complete the current 10-week program and reach
+                    Level 05 by improving strength, conditioning,
+                    and consistency.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+<script>
+    let completed = 0;
+
+    for (let i = 0; i < 3; i++) {
+        if (localStorage.getItem("fitWarsWorkout" + i) === "completed") {
+            completed++;
+        }
+    }
+
+    const progress = Math.round((completed / 3) * 100);
+
+    // Workout count
+    document.getElementById("progressWorkouts").textContent = completed;
+
+    // Program percentage
+    document.getElementById("progressProgram").textContent = progress + "%";
+
+    // Strength
+    document.getElementById("strengthPercent").textContent = progress + "%";
+    document.getElementById("strengthBar").style.width = progress + "%";
+
+    // Conditioning
+    document.getElementById("conditioningPercent").textContent = progress + "%";
+    document.getElementById("conditioningBar").style.width = progress + "%";
+
+    // Consistency
+    document.getElementById("consistencyPercent").textContent = progress + "%";
+    document.getElementById("consistencyBar").style.width = progress + "%";
+</script>
+</body>
+
+</html>

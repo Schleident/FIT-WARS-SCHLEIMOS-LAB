@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIT WARS | Welcome</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #0b0b0b;
+            border-bottom: 1px solid #1e90ff;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .logo {
+            color: #1e90ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .back-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .success-card {
+            width: 100%;
+            max-width: 650px;
+            background: #111;
+            border: 1px solid #222;
+            border-top: 3px solid #1e90ff;
+            padding: 50px 35px;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border: 2px solid #1e90ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e90ff;
+            font-size: 35px;
+        }
+
+        .section-tag {
+            color: #1e90ff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .message {
+            color: #888;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .plan-box {
+            background: #080808;
+            border: 1px solid #222;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .plan-box span {
+            display: block;
+            color: #1e90ff;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .plan-box strong {
+            font-size: 22px;
+        }
+
+        .customer-email {
+            color: #777;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-block;
+            padding: 14px 22px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .primary-btn {
+            background: #1e90ff;
+            color: black;
+        }
+
+        .primary-btn:hover {
+            background: white;
+        }
+
+        .secondary-btn {
+            border: 1px solid #1e90ff;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        .note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .success-card {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo">
+                FIT WARS 🧪
+            </div>
+
+            <a href="../index.html" class="back-btn">
+                ← Back To Site
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <p class="section-tag">
+                WELCOME TO THE LAB
+            </p>
+
+            <h1>
+                YOU'RE IN.
+            </h1>
+
+            <p class="message">
+                Your information has been received.
+                Welcome to FIT WARS @ SCHLEIMO'S LAB.
+                Your next level starts now.
+            </p>
+
+
+            <div class="plan-box">
+
+                <span>
+    SELECTED PLAN
+</span>
+
+<strong id="successPlan">
+    YOUR PLAN
+</strong>
+
+<p
+    class="customer-email"
+    id="successPrice"
+>
+    $0
+</p>
+
+<p
+    class="customer-email"
+    id="successEmail"
+>
+    Your email
+</p>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <a
+                    href="../dashboard.html"
+                    class="primary-btn"
+                >
+                    ENTER CLIENT DASHBOARD →
+                </a>
+
+                <a
+                    href="../index.html"
+                    class="secondary-btn"
+                >
+                    BACK TO SITE
+                </a>
+
+            </div>
+
+
+            <p class="note">
+                Your client account and program access will be
+                connected to the payment system when live payments
+                are activated.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+    const selectedPlan =
+        localStorage.getItem("fitWarsSelectedPlan");
+
+    const selectedPrice =
+        localStorage.getItem("fitWarsSelectedPrice");
+
+    const customerEmail =
+        localStorage.getItem("fitWarsCustomerEmail");
+
+
+    if (selectedPlan) {
+
+        document.getElementById("successPlan").textContent =
+            selectedPlan;
+
+    }
+
+
+    if (selectedPrice) {
+
+        document.getElementById("successPrice").textContent =
+            "$" + selectedPrice;
+
+    }
+
+
+    if (customerEmail) {
+
+        document.getElementById("successEmail").textContent =
+            customerEmail;
+
+    }
+
+</script>
+
+</body>
+
+</html>

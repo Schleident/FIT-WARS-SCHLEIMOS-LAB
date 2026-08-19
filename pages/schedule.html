@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIT WARS | Training Schedule</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0b0b0b;
+            border-bottom: 1px solid #1e90ff;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: #1e90ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .back-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #888;
+            margin-bottom: 35px;
+        }
+
+        .schedule {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+        }
+
+        .day-card {
+            background: #111;
+            border: 1px solid #222;
+            min-height: 260px;
+            padding: 20px;
+        }
+
+        .day-name {
+            color: #1e90ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .day-card h2 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .day-card p {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .workout-time {
+            margin-top: 20px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .rest {
+            color: #777;
+        }
+
+        .weekly-focus {
+            margin-top: 25px;
+            background: #111;
+            border: 1px solid #222;
+            border-left: 3px solid #1e90ff;
+            padding: 25px;
+        }
+
+        .weekly-focus h2 {
+            margin-bottom: 10px;
+        }
+
+        .weekly-focus p {
+            color: #888;
+            line-height: 1.6;
+        }
+        .complete-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: #050505;
+    color: #1e90ff;
+    border: 1px solid #1e90ff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.complete-btn:hover {
+    background: #1e90ff;
+    color: #050505;
+}
+
+.complete-btn.completed {
+    background: #1e90ff;
+    color: #050505;
+}
+
+        @media (max-width: 950px) {
+            .schedule {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            main {
+                padding: 30px 15px;
+            }
+
+            .page-title {
+                font-size: 30px;
+            }
+
+            .schedule {
+                grid-template-columns: 1fr;
+            }
+
+            .day-card {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo">
+                FIT WARS 🧪
+            </div>
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <h1 class="page-title">Training Schedule</h1>
+
+        <p class="intro">
+            Your weekly training schedule. Stay consistent and keep building.
+        </p>
+
+
+        <section class="schedule">
+
+
+            <div class="day-card">
+
+                <div class="day-name">MONDAY</div>
+
+                <h2>Upper Body</h2>
+
+                <p>
+                    Chest, shoulders, back, arms, and core.
+                </p>
+
+                <div class="workout-time">
+                    60 MIN
+                </div>
+
+<button class="complete-btn" onclick="completeDay(0, this)">
+    MARK COMPLETE
+</button>
+
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day-name">TUESDAY</div>
+
+                <h2>Recovery</h2>
+
+                <p>
+                    Mobility, stretching, walking, and recovery work.
+                </p>
+
+                <div class="workout-time">
+                    30 MIN
+                </div>
+<button class="complete-btn" onclick="completeDay(1, this)">
+    MARK COMPLETE
+</button>
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day-name">WEDNESDAY</div>
+
+                <h2>Lower Body</h2>
+
+                <p>
+                    Legs, glutes, hamstrings, and lower-body strength.
+                </p>
+
+                <div class="workout-time">
+                    60 MIN
+                </div>
+<button class="complete-btn" onclick="completeDay(2, this)">
+    MARK COMPLETE
+</button>
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day-name">THURSDAY</div>
+
+                <h2>Conditioning</h2>
+
+                <p>
+                    HIIT, athletic conditioning, and endurance work.
+                </p>
+
+                <div class="workout-time">
+                    45 MIN
+                </div>
+<button class="complete-btn" onclick="completeDay(3, this)">
+    MARK COMPLETE
+</button>
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day-name">FRIDAY</div>
+
+                <h2>Full Body</h2>
+
+                <p>
+                    Full-body strength, movement, and conditioning.
+                </p>
+
+                <div class="workout-time">
+                    60 MIN
+                </div>
+<button class="complete-btn" onclick="completeDay(4, this)">
+    MARK COMPLETE
+</button>
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day-name">SATURDAY</div>
+
+                <h2>Active Recovery</h2>
+
+                <p>
+                    Light cardio, mobility, stretching, and movement.
+                </p>
+
+                <div class="workout-time">
+                    30 MIN
+                </div>
+<button class="complete-btn" onclick="completeDay(5, this)">
+    MARK COMPLETE
+</button>
+            </div>
+
+
+            <div class="day-card">
+
+                <div class="day-name">SUNDAY</div>
+
+                <h2 class="rest">Rest Day</h2>
+
+                <p>
+                    Recover, refuel, and prepare for the next week.
+                </p>
+
+                <div class="workout-time rest">
+                    RECOVERY
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <section class="weekly-focus">
+
+            <h2>🔥 Weekly Focus</h2>
+
+            <p>
+                Stay consistent with your scheduled sessions.
+                Recovery is part of the program too. Focus on
+                quality movement, proper rest, and showing up
+                every week.
+            </p>
+
+        </section>
+
+    </main>
+<script>
+    function completeDay(index, button) {
+
+        const key = "fitWarsSchedule" + index;
+
+        if (localStorage.getItem(key) === "completed") {
+
+            localStorage.removeItem(key);
+
+            button.classList.remove("completed");
+            button.textContent = "MARK COMPLETE";
+
+        } else {
+
+            localStorage.setItem(key, "completed");
+
+            button.classList.add("completed");
+            button.textContent = "✓ COMPLETED";
+
+        }
+    }
+
+
+    window.onload = function () {
+
+        const buttons = document.querySelectorAll(".complete-btn");
+
+        buttons.forEach(function(button, index) {
+
+            const key = "fitWarsSchedule" + index;
+
+            if (localStorage.getItem(key) === "completed") {
+
+                button.classList.add("completed");
+                button.textContent = "✓ COMPLETED";
+
+            } else {
+
+                button.classList.remove("completed");
+                button.textContent = "MARK COMPLETE";
+
+            }
+
+        });
+
+    };
+</script>
+</body>
+
+</html>

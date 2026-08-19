@@ -1,0 +1,571 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIT WARS | Checkout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0b0b0b;
+            border-bottom: 1px solid #1e90ff;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #1e90ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo small {
+            display: block;
+            color: #777;
+            font-size: 9px;
+            letter-spacing: 2px;
+            margin-top: 3px;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 10px 16px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-tag {
+            color: #1e90ff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .checkout-header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .checkout-header p {
+            color: #888;
+        }
+
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 25px;
+        }
+
+        .checkout-box {
+            background: #111;
+            border: 1px solid #222;
+            padding: 30px;
+        }
+
+        .checkout-box h2 {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #1e90ff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: white;
+            padding: 14px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1e90ff;
+        }
+
+        .demo-box {
+            background: #0b0b0b;
+            border: 1px solid #222;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        .demo-box p {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .selected-plan {
+            border-left: 3px solid #1e90ff;
+            background: #0b0b0b;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .selected-plan-label {
+            color: #1e90ff;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .selected-plan h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .selected-plan p {
+            color: #888;
+            line-height: 1.6;
+            font-size: 13px;
+        }
+
+        .features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .features li {
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 12px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #1e90ff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .price-box {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .price-row.total {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #1e90ff;
+            color: black;
+            border: none;
+            padding: 16px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .checkout-btn:hover {
+            background: white;
+        }
+
+        .back-coaching {
+            display: block;
+            text-align: center;
+            color: #777;
+            text-decoration: none;
+            font-size: 11px;
+            margin-top: 20px;
+        }
+
+        .back-coaching:hover {
+            color: #1e90ff;
+        }
+
+        @media (max-width: 800px) {
+
+            .checkout-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-header h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            main {
+                padding: 35px 15px;
+            }
+
+            .checkout-box {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <div class="logo">
+            FIT WARS
+            <small>@ SCHLEIMO'S LAB 🧪</small>
+        </div>
+
+        <a href="coaching.html" class="back-btn">
+            ← BACK TO COACHING
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="checkout-header">
+
+        <p class="section-tag">
+            SCHLEIMO'S LAB
+        </p>
+
+        <h1>
+            CHECKOUT
+        </h1>
+
+        <p>
+            Complete your information to continue.
+        </p>
+
+    </section>
+
+
+    <section class="checkout-layout">
+
+
+        <!-- ATHLETE INFORMATION -->
+
+        <div class="checkout-box">
+
+            <h2>
+                ATHLETE INFORMATION
+            </h2>
+
+            <form id="checkoutForm">
+
+                <label for="fullName">
+                    FULL NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Your full name"
+                    required
+                >
+
+
+                <label for="email">
+                    EMAIL
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email"
+                    required
+                >
+
+
+                <label for="phone">
+                    PHONE
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Your phone number"
+                >
+
+
+                <div class="demo-box">
+
+                    <p>
+                        <strong style="color:white;">
+                            DEMO CHECKOUT
+                        </strong>
+                        <br><br>
+
+                        Real payment processing is not connected yet.
+                        We will connect a secure payment provider later.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="checkout-btn"
+                >
+                    CONTINUE →
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="checkout-box">
+
+            <h2>
+                YOUR PLAN
+            </h2>
+
+
+            <div class="selected-plan">
+
+                <p class="selected-plan-label">
+                    SELECTED PLAN
+                </p>
+
+                <h3 id="selectedPlan">
+                    Loading...
+                </h3>
+
+                <p>
+                    Structured training, workouts,
+                    progress tracking, and client
+                    dashboard access.
+                </p>
+
+
+                <ul class="features">
+
+                    <li>
+                        Structured training program
+                    </li>
+
+                    <li>
+                        Workout access
+                    </li>
+
+                    <li>
+                        Progress tracking
+                    </li>
+
+                    <li>
+                        Client dashboard access
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="price-box">
+
+                <div class="price-row">
+
+                    <span>
+                        PLAN
+                    </span>
+
+                    <strong id="planPrice">
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <div class="price-row total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="totalPrice">
+                        $0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<script>
+
+    /*
+        GET SELECTED PLAN FROM COACHING PAGE
+    */
+
+    const selectedPlan =
+        localStorage.getItem("fitWarsSelectedPlan");
+
+    const selectedPrice =
+        localStorage.getItem("fitWarsSelectedPrice");
+
+
+    /*
+        DISPLAY PLAN NAME
+    */
+
+    if (selectedPlan) {
+
+        document.getElementById("selectedPlan").textContent =
+            selectedPlan;
+
+    } else {
+
+        document.getElementById("selectedPlan").textContent =
+            "NO PLAN SELECTED";
+
+    }
+
+
+    /*
+        DISPLAY PRICE
+    */
+
+    if (selectedPrice) {
+
+        const price =
+            Number(selectedPrice);
+
+        document.getElementById("planPrice").textContent =
+            "$" + price;
+
+        document.getElementById("totalPrice").textContent =
+            "$" + price;
+
+    }
+
+
+    /*
+        DEMO CHECKOUT
+    */
+
+    document.getElementById("checkoutForm").addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("fullName").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+
+            localStorage.setItem(
+                "fitWarsName",
+                name
+            );
+
+            localStorage.setItem(
+                "fitWarsEmail",
+                email
+            );
+
+            localStorage.setItem(
+                "fitWarsPhone",
+                phone
+            );
+
+
+            alert(
+                "Checkout information saved! Payment processing will be connected later."
+            );
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>
+```

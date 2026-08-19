@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIT WARS | My Profile</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #0b0b0b;
+            border-bottom: 1px solid #1e90ff;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: #1e90ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #1e90ff;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .back-btn:hover {
+            background: #1e90ff;
+            color: black;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 25px;
+        }
+
+        .profile-card,
+        .info-section {
+            background: #111;
+            border: 1px solid #222;
+        }
+
+        .profile-card {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border: 2px solid #1e90ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #1e90ff;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 8px;
+        }
+
+        .athlete-status {
+            color: #1e90ff;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .level-box {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        .level-box span {
+            display: block;
+            color: #777;
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        .level-box strong {
+            font-size: 32px;
+        }
+
+        .info-section {
+            padding: 30px;
+        }
+
+        .info-section h2 {
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .info-item {
+            background: #0b0b0b;
+            border: 1px solid #222;
+            padding: 18px;
+        }
+
+        .info-item span {
+            display: block;
+            color: #1e90ff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .info-item strong {
+            color: white;
+            font-size: 15px;
+        }
+
+        .goals-section {
+            margin-top: 25px;
+            background: #111;
+            border: 1px solid #222;
+            border-left: 3px solid #1e90ff;
+            padding: 30px;
+        }
+
+        .goals-section h2 {
+            margin-bottom: 12px;
+        }
+
+        .goals-section p {
+            color: #888;
+            line-height: 1.7;
+        }
+
+        .edit-btn {
+            display: inline-block;
+            margin-top: 25px;
+            background: #1e90ff;
+            color: black;
+            text-decoration: none;
+            padding: 13px 22px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .edit-btn:hover {
+            background: white;
+        }
+
+        @media (max-width: 800px) {
+
+            .profile-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            main {
+                padding: 30px 15px;
+            }
+
+            .page-title {
+                font-size: 30px;
+            }
+
+            .profile-card,
+            .info-section {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo">
+                FIT WARS 🧪
+            </div>
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <h1 class="page-title">My Profile</h1>
+
+        <p class="intro">
+            Your athlete information, training goals, and Lab status.
+        </p>
+
+
+        <section class="profile-layout">
+
+
+            <div class="profile-card">
+
+                <div class="profile-avatar" id="profileAvatar">
+    AT
+</div>
+
+<h2 id="profileName">ATHLETE</h2>
+
+                <p class="athlete-status">
+                    ● ACTIVE CLIENT
+                </p>
+
+                <div class="level-box">
+
+                    <span>LAB ATHLETE LEVEL</span>
+
+                    <strong id="profileLevel">04</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-section">
+
+                <h2>Athlete Information</h2>
+
+                <div class="info-grid">
+
+
+                    <div class="info-item">
+
+                        <span>NAME</span>
+
+                        <strong id="profileNameInfo">Your Name</strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>MEMBERSHIP</span>
+
+                        <strong>Active</strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>TRAINING STYLE</span>
+
+                        <strong id="profileTrainingStyle">Strength & Conditioning</strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>EXPERIENCE</span>
+
+                        <strong>Intermediate</strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+    <span>PROGRAM</span>
+
+    <strong id="profileProgram">The Foundation</strong>
+
+</div>
+
+
+                    <div class="info-item">
+
+                        <span>PROGRAM WEEK</span>
+
+                       <strong id="profileWeek">Week 0 of 3</strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <section class="goals-section">
+
+            <h2>🎯 Training Goal</h2>
+
+            <p>
+                Build strength, improve conditioning, develop
+                athletic movement, and stay consistent with
+                training.
+            </p>
+
+            <a href="coaching-request.html" class="edit-btn">
+                REQUEST PROFILE UPDATE
+            </a>
+<button type="button" class="edit-btn" onclick="editProfile()">
+    EDIT PROFILE NAME
+</button>
+        </section>
+
+
+    </main>
+<script>
+    const savedName = localStorage.getItem("fitWarsName");
+
+    if (savedName) {
+        document.getElementById("profileName").textContent = savedName;
+        document.getElementById("profileNameInfo").textContent = savedName;
+
+        const initials = savedName
+            .split(" ")
+            .map(name => name.charAt(0))
+            .join("")
+            .substring(0, 2)
+            .toUpperCase();
+
+        document.getElementById("profileAvatar").textContent = initials;
+    }
+
+    const savedStyle =
+        localStorage.getItem("fitWarsTrainingStyle");
+
+    if (savedStyle) {
+        document.getElementById("profileTrainingStyle").textContent =
+            savedStyle;
+    }
+
+    function editProfile() {
+
+        const currentName =
+            localStorage.getItem("fitWarsName") || "";
+
+        const newName = prompt(
+            "Enter your athlete name:",
+            currentName
+        );
+
+        if (newName === null) {
+            return;
+        }
+
+        const cleanName = newName.trim();
+
+        if (cleanName === "") {
+            alert("Please enter a name.");
+            return;
+        }
+
+        localStorage.setItem("fitWarsName", cleanName);
+
+        setTimeout(function() {
+
+            const currentStyle =
+                localStorage.getItem("fitWarsTrainingStyle") ||
+                "Strength & Conditioning";
+
+            const newStyle = prompt(
+                "Enter your training style:",
+                currentStyle
+            );
+
+            if (newStyle !== null && newStyle.trim() !== "") {
+
+                localStorage.setItem(
+                    "fitWarsTrainingStyle",
+                    newStyle.trim()
+                );
+            }
+
+            location.reload();
+
+        }, 300);
+    }
+</script>
+
+<script>
+    let completed = 0;
+
+    for (let i = 0; i < 3; i++) {
+
+        if (
+            localStorage.getItem("fitWarsWorkout" + i) ===
+            "completed"
+        ) {
+            completed++;
+        }
+    }
+
+    document.getElementById("profileWeek").textContent =
+        "Week " + completed + " of 3";
+
+    let level = 4;
+
+    if (completed === 3) {
+        level = 5;
+    }
+
+    document.getElementById("profileLevel").textContent =
+        String(level).padStart(2, "0");
+
+    document.getElementById("profileProgram").textContent =
+        "The Foundation";
+</script>
+
+</body>
+
+</html>
