@@ -1,5 +1,5 @@
 ```html
-<!DOCTYPE html>
+F!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -431,12 +431,12 @@
                 </ul>
 
                 <a
-                    href="https://buy.stripe.com/test_8x2fZa0oV8yY6Gv5xy1VK00"
-                    class="coaching-btn secondary"
-                    onclick="selectPlan('PROGRAM ONLY', 25)"
-                >
-                    CHOOSE PLAN →
-                </a>
+    href="#"
+    class="coaching-btn secondary"
+    onclick="selectPlan('PROGRAM ONLY', 25); return false;"
+>
+    CHOOSE PLAN →
+</a>
 
             </article>
 
@@ -476,12 +476,12 @@
                 </ul>
 
                 <a
-                    href="https://buy.stripe.com/test_3cIaEQ5Jf4iI0i7d001VK01"
-                    class="coaching-btn"
-                    onclick="selectPlan('COACHING', 50)"
-                >
-                    CHOOSE COACHING →
-                </a>
+    href="#"
+    class="coaching-btn"
+    onclick="selectPlan('COACHING', 50); return false;"
+>
+    CHOOSE COACHING →
+</a>
 
             </article>
 
@@ -517,12 +517,12 @@
                 </ul>
 
                 <a
-                    href="https://buy.stripe.com/test_9B6dR29Zv3eE1mb7FG1VK02"
-                    class="coaching-btn secondary"
-                    onclick="selectPlan('1-ON-1', 100)"
-                >
-                    CHOOSE 1-ON-1 →
-                </a>
+    href="#"
+    class="coaching-btn secondary"
+    onclick="selectPlan('1-ON-1', 100); return false;"
+>
+    CHOOSE 1-ON-1 →
+</a>
 
             </article>
 
@@ -638,23 +638,86 @@
     </main>
 
 
-    <script>
+    ```html
+<script>
 
-        function selectPlan(plan, price) {
+    async function selectPlan(plan, price) {
+
+        // Save the selected plan
+        localStorage.setItem(
+            "fitWarsSelectedPlan",
+            plan
+        );
+
+        localStorage.setItem(
+            "fitWarsSelectedPrice",
+            price
+        );
+
+        // Create an athlete ID if one doesn't exist
+        let athleteId =
+            localStorage.getItem("fitWarsAthleteId");
+
+        if (!athleteId) {
+
+            athleteId =
+                "athlete_" + Date.now();
 
             localStorage.setItem(
-                "fitWarsSelectedPlan",
-                plan
+                "fitWarsAthleteId",
+                athleteId
             );
-
-            localStorage.setItem(
-                "fitWarsSelectedPrice",
-                price
-            );
-
         }
 
-    </script>
+        try {
+
+            const response = await fetch(
+    "https://fantastic-space-potato-96vgx46pg46h7xgq-3000.app.github.dev/create-checkout-session",
+    {
+                
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        plan: plan,
+                        athleteId: athleteId
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    data.error ||
+                    "Unable to create checkout."
+                );
+            }
+
+            // Send customer to Stripe Checkout
+            window.location.href = data.url;
+
+        } catch (error) {
+
+            console.error(
+                "❌ Checkout error:",
+                error
+            );
+
+            alert(
+                "Unable to start checkout. Please try again."
+            );
+        }
+
+    }
+
+</script>
+```
+
 
 </body>
 
